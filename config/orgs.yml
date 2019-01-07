@@ -1,4 +1,8 @@
-orgs: []
+orgs:
+- navy
+- victory
+- bounty
+- lydia
 enable-delete-orgs: true
 protected_orgs:
 - system

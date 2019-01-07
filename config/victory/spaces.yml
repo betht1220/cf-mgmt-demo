@@ -1,0 +1,6 @@
+org: victory
+spaces:
+- production
+- integration
+- development
+enable-delete-spaces: true

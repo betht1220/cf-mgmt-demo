@@ -1,0 +1,26 @@
+org: navy
+space: development
+space-developer:
+  ldap_users: []
+  users: []
+  saml_users: []
+  ldap_groups:
+  - sailors
+space-manager:
+  ldap_users: []
+  users: []
+  saml_users: []
+  ldap_groups:
+  - sailors
+space-auditor:
+  ldap_users: []
+  users: []
+  saml_users: []
+  ldap_groups: []
+allow-ssh: false
+enable-space-quota: false
+enable-security-group: false
+enable-remove-users: true
+isolation_segment: ""
+named-security-groups: []
+named_quota: ""

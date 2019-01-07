@@ -1,0 +1,6 @@
+org: bounty
+spaces:
+- production
+- integration
+- development
+enable-delete-spaces: true
