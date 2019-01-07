@@ -77,4 +77,6 @@ sed -i '' 's#groupAttribute: ""#groupAttribute: "uniqueMember"#' ${BASEDIR}/conf
 
 git add config
 git commit -m "Added various orgs and spaces"
-git push --set-upstream origin demo
+# demo upstream is already created in github betht1220
+# git push --set-upstream origin demo
+git push origin demo
