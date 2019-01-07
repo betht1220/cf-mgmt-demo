@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-cf-mgmt generate-concourse-pipeline
+cf-mgmt-config-osx generate-concourse-pipeline
 
 # use modern substitutions
 sed -i '' 's#{{#((#' pipeline.yml
