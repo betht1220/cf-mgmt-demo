@@ -6,9 +6,7 @@ sed -i '' 's#ci.*$##' ${BASEDIR}/.gitignore
 sed -i '' 's#config.*$##' ${BASEDIR}/.gitignore
 sed -i '' '#^$#d' ${BASEDIR}/.gitignore
 
-# this command is old, cf-mgmt init-config
-# use the following new command
-cf-mgmt-config-osx init
+cf-mgmt init-config
 git add ${BASEDIR}/.gitignore
 git add config
 

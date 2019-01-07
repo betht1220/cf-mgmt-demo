@@ -1,44 +1,78 @@
 #!/usr/bin/env bash
+source ~/.bash_profile
 BASEDIR=`dirname $0`/..
-cf-mgmt init-config
+# cf-mgmt init-config
+cf-mgmt-config-osx init
 
 # allow for organizations for the entire navy and each ship with spaces for development regions
 
 # Navy wide applications
-cf-mgmt add-org-to-config --org navy --org-billing-mgr-grp gentry --org-auditor-grp captain
-cf-mgmt add-space-to-config --org navy --space production --space-mgr-grp captain --space-auditor-grp midshipman
-cf-mgmt add-space-to-config --org navy --space integration --space-mgr-grp lieutenant --space-auditor-grp sailors
-cf-mgmt add-space-to-config --org navy --space development --space-mgr-grp sailors --space-dev-grp sailors
+# doc for old command "add-org-to-config" = https://github.com/pivotalservices/cf-mgmt/blob/master/docs/add-org-to-config/README.md
+# old commands = cf-mgmt add-org-to-config --org navy --org-billing-mgr-grp gentry --org-auditor-grp captain
+#		cf-mgmt add-space-to-config --org navy --space production --space-mgr-grp captain --space-auditor-grp midshipman
+#		cf-mgmt add-space-to-config --org navy --space integration --space-mgr-grp lieutenant --space-auditor-grp sailors
+#		cf-mgmt add-space-to-config --org navy --space development --space-mgr-grp sailors --space-dev-grp sailors
+# doc for new command "add-org" = https://github.com/pivotalservices/cf-mgmt/blob/master/docs/config/add-org/README.md = ./cf-mgmt-config-osx add-org --help
+#														       = ./cf-mgmt-config-osx add-space --help
+# new command replacing old command
+cf-mgmt-config-osx add-org             --org=navy --billing-manager-ldap-group=gentry --auditor-ldap-group=captain
+cf-mgmt-config-osx add-space           --org=navy --space=production 	--manager-ldap-group=captain 	--auditor-ldap-group=midshipman
+cf-mgmt-config-osx add-space		 --org=navy --space=integration --manager-ldap-group=lieutenant --auditor-ldap-group=sailors
+cf-mgmt-config-osx add-space		 --org=navy --space=development --manager-ldap-group=sailors 	--developer-ldap-group=sailors
 
 # HMS Victory applications
-cf-mgmt add-org-to-config --org victory --org-billing-mgr-grp gentry --org-auditor-grp "HMS Victory"
-cf-mgmt add-space-to-config --org victory --space production --space-mgr-grp captain --space-auditor-grp "HMS Victory"
-cf-mgmt add-space-to-config --org victory --space integration --space-mgr-grp lieutenant --space-auditor-grp "HMS Victory"
-cf-mgmt add-space-to-config --org victory --space development --space-mgr-grp sailors --space-dev-grp "HMS Victory"
+# cf-mgmt add-org-to-config --org victory --org-billing-mgr-grp gentry --org-auditor-grp "HMS Victory"
+# cf-mgmt add-space-to-config --org victory --space production --space-mgr-grp captain --space-auditor-grp "HMS Victory"
+# cf-mgmt add-space-to-config --org victory --space integration --space-mgr-grp lieutenant --space-auditor-grp "HMS Victory"
+# cf-mgmt add-space-to-config --org victory --space development --space-mgr-grp sailors --space-dev-grp "HMS Victory"
 
+cf-mgmt-config-osx add-org             --org=victory --billing-manager-ldap-group=gentry --auditor-ldap-group="HMS Victory"
+cf-mgmt-config-osx add-space           --org=victory --space=production 	--manager-ldap-group=captain 	--auditor-ldap-group="HMS Victory"
+cf-mgmt-config-osx add-space		 --org=victory --space=integration --manager-ldap-group=lieutenant 	--auditor-ldap-group="HMS Victory"
+cf-mgmt-config-osx add-space		 --org=victory --space=development --manager-ldap-group=sailors 	--developer-ldap-group="HMS Victory"
 # HMS Bounty applications
-cf-mgmt add-org-to-config --org bounty --org-billing-mgr-grp gentry --org-auditor-grp "HMS Bounty"
-cf-mgmt add-space-to-config --org bounty --space production --space-mgr-grp captain --space-auditor-grp "HMS Bounty"
-cf-mgmt add-space-to-config --org bounty --space integration --space-mgr-grp lieutenant --space-auditor-grp "HMS Bounty"
-cf-mgmt add-space-to-config --org bounty --space development --space-mgr-grp sailors --space-dev-grp "HMS Bounty"
+# cf-mgmt add-org-to-config --org bounty --org-billing-mgr-grp gentry --org-auditor-grp "HMS Bounty"
+# cf-mgmt add-space-to-config --org bounty --space production --space-mgr-grp captain --space-auditor-grp "HMS Bounty"
+# cf-mgmt add-space-to-config --org bounty --space integration --space-mgr-grp lieutenant --space-auditor-grp "HMS Bounty"
+# cf-mgmt add-space-to-config --org bounty --space development --space-mgr-grp sailors --space-dev-grp "HMS Bounty"
 
+cf-mgmt-config-osx add-org             --org=bounty 	--billing-manager-ldap-group=gentry --auditor-ldap-group="HMS Bounty"
+cf-mgmt-config-osx add-space           --org=bounty	--space=production 	--manager-ldap-group=captain 		--auditor-ldap-group="HMS Bounty"
+cf-mgmt-config-osx add-space		 --org=bounty	--space=integration 	--manager-ldap-group=lieutenant 	--auditor-ldap-group="HMS Bounty"
+cf-mgmt-config-osx add-space		 --org=bounty	--space=development 	--manager-ldap-group=sailors 		--developer-ldap-group="HMS Bounty"
 # HMS Lydia applications
-cf-mgmt add-org-to-config --org lydia --org-billing-mgr-grp gentry --org-auditor-grp "HMS Lydia"
-cf-mgmt add-space-to-config --org lydia --space production --space-mgr-grp captain --space-auditor-grp "HMS Lydia"
-cf-mgmt add-space-to-config --org lydia --space integration --space-mgr-grp lieutenant --space-auditor-grp "HMS Lydia"
-cf-mgmt add-space-to-config --org lydia --space development --space-mgr-grp sailors --space-dev-grp "HMS Lydia"
+# cf-mgmt add-org-to-config --org lydia --org-billing-mgr-grp gentry --org-auditor-grp "HMS Lydia"
+# cf-mgmt add-space-to-config --org lydia --space production --space-mgr-grp captain --space-auditor-grp "HMS Lydia"
+# cf-mgmt add-space-to-config --org lydia --space integration --space-mgr-grp lieutenant --space-auditor-grp "HMS Lydia"
+# cf-mgmt add-space-to-config --org lydia --space development --space-mgr-grp sailors --space-dev-grp "HMS Lydia"
 
+cf-mgmt-config-osx add-org             --org=lydia	--billing-manager-ldap-group=gentry 				--auditor-ldap-group="HMS Lydia"
+cf-mgmt-config-osx add-space           --org=lydia	--space=production 	--manager-ldap-group=captain 		--auditor-ldap-group="HMS Lydia"
+cf-mgmt-config-osx add-space		 --org=lydia	--space=integration 	--manager-ldap-group=lieutenant 	--auditor-ldap-group="HMS Lydia"
+cf-mgmt-config-osx add-space		 --org=lydia	--space=development 	--manager-ldap-group=sailors 		--developer-ldap-group="HMS Lydia"
+#
+LDAP_CID=`docker ps | grep my-openldap-container | awk '{ print $1}'`
+LDAP_IP1=`docker inspect $LDAP_CID | grep IPAddress | awk '{ print $2 }'`
+LDAP_IP2=`echo $LDAP_IP1 | awk '{ print $2 }'`
+LDAP_DOCKER_IP=`echo $LDAP_IP2  | awk -F\" '{print $2}'`
+echo $LDAP_DOCKER_IP
 # modify ldap configuration
+# sed -i '' 's#ldapHost: ""#ldapHost: "10.0.2.2"#' ${BASEDIR}/config/ldap.yml
+# sed -i '' 's#bindDN: ""#bindDN: "cn=admin,dc=pivotal,dc=org"#' ${BASEDIR}/config/ldap.yml
+# sed -i '' 's#userSearchBase: ""#userSearchBase: "ou=people,o=sevenSeas,dc=pivotal,dc=org"#' ${BASEDIR}/config/ldap.yml
+# sed -i '' 's#groupSearchBase: ""#groupSearchBase: "ou=groups,o=sevenSeas,dc=pivotal,dc=org"#' ${BASEDIR}/config/ldap.yml
+
 sed -i '' 's#enabled: false#enabled: true#' ${BASEDIR}/config/ldap.yml
-sed -i '' 's#ldapHost: ""#ldapHost: "10.0.2.2"#' ${BASEDIR}/config/ldap.yml
+sed -i '' 's#ldapHost: ""#ldapHost: "$LDAP_DOCKER_IP"#' ${BASEDIR}/config/ldap.yml
 sed -i '' 's#ldapPort: 0#ldapPort: 389#' ${BASEDIR}/config/ldap.yml
-sed -i '' 's#bindDN: ""#bindDN: "cn=admin,dc=pivotal,dc=org"#' ${BASEDIR}/config/ldap.yml
-sed -i '' 's#userSearchBase: ""#userSearchBase: "ou=people,o=sevenSeas,dc=pivotal,dc=org"#' ${BASEDIR}/config/ldap.yml
+sed -i '' 's#bindDN: ""#bindDN: "cn=admin,dc=example,dc=org"#' ${BASEDIR}/config/ldap.yml
+sed -i '' 's#userSearchBase: ""#userSearchBase: "ou=people,o=sevenSeas,dc=example,dc=org"#' ${BASEDIR}/config/ldap.yml
 sed -i '' 's#userNameAttribute: ""#userNameAttribute: "uid"#' ${BASEDIR}/config/ldap.yml
 sed -i '' 's#userMailAttribute: ""#userMailAttribute: "mail"#' ${BASEDIR}/config/ldap.yml
 sed -i '' 's#userObjectClass: ""#userObjectClass: "inetOrgPerson"#' ${BASEDIR}/config/ldap.yml
-sed -i '' 's#groupSearchBase: ""#groupSearchBase: "ou=groups,o=sevenSeas,dc=pivotal,dc=org"#' ${BASEDIR}/config/ldap.yml
+sed -i '' 's#groupSearchBase: ""#groupSearchBase: "ou=groups,o=sevenSeas,dc=example,dc=org"#' ${BASEDIR}/config/ldap.yml
 sed -i '' 's#groupAttribute: ""#groupAttribute: "uniqueMember"#' ${BASEDIR}/config/ldap.yml
+# cat ${BASEDIR}/config/ldap.yml # make sure it does not contain 10.0.2.2
 
 git add config
 git commit -m "Added various orgs and spaces"
