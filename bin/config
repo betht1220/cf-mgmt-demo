@@ -73,7 +73,7 @@ sed -i '' 's#userMailAttribute: ""#userMailAttribute: "mail"#' ${BASEDIR}/config
 sed -i '' 's#userObjectClass: ""#userObjectClass: "inetOrgPerson"#' ${BASEDIR}/config/ldap.yml
 sed -i '' 's#groupSearchBase: ""#groupSearchBase: "ou=groups,o=sevenSeas,dc=example,dc=org"#' ${BASEDIR}/config/ldap.yml
 sed -i '' 's#groupAttribute: ""#groupAttribute: "uniqueMember"#' ${BASEDIR}/config/ldap.yml
-# cat ${BASEDIR}/config/ldap.yml # make sure it does not contain 10.0.2.2
+cat ${BASEDIR}/config/ldap.yml # make sure it does not contain 10.0.2.2
 
 git add config
 git commit -m "Added various orgs and spaces"

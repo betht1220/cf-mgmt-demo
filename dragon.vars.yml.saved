@@ -1,0 +1,8 @@
+git_repo_uri: https://github.com/betht1220/cf-mgmt-demo #your git repo uri
+git_repo_branch: demo
+system_domain: dev.cfdev.sh #your cf system domain
+user_id: cf-mgmt # user account with permission to create orgs/spaces - ie uaa client account cf-mgmt/cf-mgmt secret.  This acct was created using uaac with admin/admin-client-secret in cf.yml manifest
+password: # DEPRECATED - Use client_secret - password of user account with permission to create orgs/spaces
+client_secret: cf-mgmt-secret # client secret for uaac for user_id
+ldap_password: admin # password to bind to ldap - only needed if using LDAP admin/admin or billy/billy
+log_level: INFO # logging level for cf-mgmt commands in the pipeline
