@@ -1,5 +1,5 @@
 enabled: true
-ldapHost: "$LDAP_DOCKER_IP"
+ldapHost: "127.0.0.1"
 ldapPort: 389
 use_tls: false
 bindDN: "cn=admin,dc=example,dc=org"
