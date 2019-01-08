@@ -56,7 +56,8 @@ LDAP_IP1=`docker inspect $LDAP_CID | grep IPAddress | awk '{ print $2 }'`
 LDAP_IP2=`echo $LDAP_IP1 | awk '{ print $2 }'`
 LDAP_DOCKER_IP=`echo $LDAP_IP2  | awk -F\" '{print $2}'`
 echo $LDAP_DOCKER_IP
-LDAP_DOCKER_IP="127.0.0.1"
+exit
+# LDAP_DOCKER_IP="127.0.0.1"
 # modify ldap configuration
 # sed -i '' 's#ldapHost: ""#ldapHost: "10.0.2.2"#' ${BASEDIR}/config/ldap.yml
 # sed -i '' 's#bindDN: ""#bindDN: "cn=admin,dc=pivotal,dc=org"#' ${BASEDIR}/config/ldap.yml
