@@ -1,5 +1,5 @@
 enabled: true
-ldapHost: "172.17.0.2"
+ldapHost: "192.168.1.78"
 ldapPort: 389
 use_tls: false
 bindDN: "cn=admin,dc=example,dc=org"
