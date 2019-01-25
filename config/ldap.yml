@@ -1,5 +1,4 @@
 enabled: true
-ldapHost: "192.168.1.78"
 ldapPort: 389
 use_tls: false
 bindDN: "cn=admin,dc=example,dc=org"
@@ -12,3 +11,4 @@ groupAttribute: "uniqueMember"
 origin: ldap
 insecure_skip_verify: ""
 ca_cert: ""
+ldapHost: "192.168.1.2"

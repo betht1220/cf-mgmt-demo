@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 source ~/.bash_profile
 BASEDIR=`dirname $0`/..
+echo $BASEDIR
 # cf-mgmt init-config
 cf-mgmt-config-osx init
 

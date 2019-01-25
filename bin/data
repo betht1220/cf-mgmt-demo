@@ -2,4 +2,4 @@
 BASEDIR=`dirname $0`/..
 LDAP_URL="ldap://localhost"
 LDAP_PASSWORD="admin" # admin/admin, billy/billy
-ldapadd -H $LDAP_URL -D cn=admin,dc=example,dc=org -w $LDAP_PASSWORD -f data/apache-ds-tutorial.ldif
+ldapadd -H $LDAP_URL -D cn=admin,dc=example,dc=org -w $LDAP_PASSWORD -f ../data/apache-ds-tutorial.ldif
