@@ -5,6 +5,7 @@ orgs:
 - lydia
 enable-delete-orgs: true
 protected_orgs:
+- cfdev-org
 - system
 - p-spring-cloud-services
 - splunk-nozzle-org
