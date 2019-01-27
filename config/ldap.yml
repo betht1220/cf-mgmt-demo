@@ -11,4 +11,4 @@ groupAttribute: "uniqueMember"
 origin: ldap
 insecure_skip_verify: ""
 ca_cert: ""
-ldapHost: "192.168.1.2"
+ldapHost: "192.168.1.78"
