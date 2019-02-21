@@ -3,7 +3,7 @@ space: development
 space-developer:
   ldap_users: []
   users: 
-  - admin 
+  - beth 
   saml_users: []
   ldap_groups:
   - HMS Lydia
