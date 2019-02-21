@@ -2,7 +2,8 @@ org: lydia
 space: development
 space-developer:
   ldap_users: []
-  users: []
+  users: 
+  - admin 
   saml_users: []
   ldap_groups:
   - HMS Lydia
