@@ -1,7 +1,4 @@
 orgs:
-- navy
-- victory
-- bounty
 - lydia
 enable-delete-orgs: true
 protected_orgs:
@@ -11,3 +8,6 @@ protected_orgs:
 - splunk-nozzle-org
 - redis-test-ORG*
 - appdynamics-org
+- navy
+- victory
+- bounty

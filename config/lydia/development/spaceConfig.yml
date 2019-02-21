@@ -4,6 +4,8 @@ space-developer:
   ldap_users: []
   users: 
   - beth 
+  - tran
+  - admin
   saml_users: []
   ldap_groups:
   - HMS Lydia
