@@ -1,6 +1,6 @@
 orgs:
 - lydia
-enable-delete-orgs: true
+enable-delete-orgs: false
 protected_orgs:
 - cfdev-org
 - system
