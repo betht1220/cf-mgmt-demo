@@ -3,4 +3,4 @@ spaces:
 - production
 - integration
 - development
-enable-delete-spaces: true
+enable-delete-spaces: false

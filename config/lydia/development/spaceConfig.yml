@@ -21,7 +21,7 @@ space-auditor:
 allow-ssh: false
 enable-space-quota: false
 enable-security-group: false
-enable-remove-users: true
+enable-remove-users: false
 isolation_segment: ""
 named-security-groups: []
 named_quota: ""
